@@ -4,8 +4,10 @@
 
 export default function Home() {
   return (
-    <div>
-      Hello World
+    <div className="bg-black p-4">
+      <div className="bg-secodary">
+        Hello World
+      </div>
     </div>
   );
 }
