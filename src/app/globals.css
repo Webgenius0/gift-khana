@@ -47,6 +47,9 @@
   --color-custom-secondary: var(--custom-secondary);
   --color-gradient-base: var(--custom-gradient-base);
 
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
   --font-bebas: var(--font-bebas-family);
   --font-courgette: var(--font-courgette-family);
   --font-montserrat: var(--font-montserrat-family);
@@ -55,11 +58,13 @@
 
 :root {
   /* Separated Custom Colors */
-  --custom-primary: #efe4dd;
+  --custom-primary: #F0E3DC;
   --custom-secondary: #182235;
   --custom-bg-primary: #DAB79C;
   --custom-bg-secondary: #FBF3EA;
   --custom-gradient-base: #DAB7A0;
+  --custom-text-primary: #182134;
+  --custom-text-secondary: #3D4A5C;
 
   --radius: 0.625rem;
   --card: var(--custom-bg-secondary);
@@ -122,7 +127,20 @@
     font-family: var(--font-rubik-family);
   }
 
+  .font-arial {
+    font-family: Arial, sans-serif;
+  }
+
+  .font-helvetica {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
   .bg-primary-gradient {
     background: linear-gradient(to bottom, #DAB7A0 0%, #DAB7A0 100%);
   }
+}
+
+
+.smooth {
+  transition: all 0.3s ease-in-out;
 }
