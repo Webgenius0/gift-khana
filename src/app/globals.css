@@ -41,6 +41,11 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-bebas: var(--font-bebas-family);
+  --font-courgette: var(--font-courgette-family);
+  --font-montserrat: var(--font-montserrat-family);
+  --font-rubik: var(--font-rubik-family);
 }
 
 :root {
@@ -82,7 +87,26 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-bebas {
+    font-family: var(--font-bebas-family);
+  }
+
+  .font-courgette {
+    font-family: var(--font-courgette-family);
+  }
+
+  .font-montserrat {
+    font-family: var(--font-montserrat-family);
+  }
+
+  .font-rubik {
+    font-family: var(--font-rubik-family);
   }
 }

@@ -1,14 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bebas_Neue, Courgette, Montserrat, Rubik } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas-family",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const courgette = Courgette({
+  weight: "400",
+  variable: "--font-courgette-family",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat-family",
+  subsets: ["latin"],
+});
+
+const rubik = Rubik({
+  variable: "--font-rubik-family",
   subsets: ["latin"],
 });
 
@@ -21,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${bebasNeue.variable} ${courgette.variable} ${montserrat.variable} ${rubik.variable} antialiased`}
       >
         {children}
         <Toaster />
