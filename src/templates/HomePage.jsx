@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Shared/NavBar/Header';
 import Banner from '@/components/HomePageComponents/Banner';
 import Footer from '@/components/Shared/Footer/Footer';
+import CTASection from '@/components/HomePageComponents/CTASection';
 
 const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage = () => {
                 <Header />
             </div>
             <Banner />
+            <CTASection />
             <Footer />
         </div>
     );
