@@ -34,13 +34,17 @@ export const metadata = {
   },
 };
 
+import LenisProvider from "@/providers/LenisProvider";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
         className={`${bebasNeue.variable} ${courgette.variable} ${montserrat.variable} ${rubik.variable} antialiased`}
       >
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
         <Toaster />
       </body>
     </html>
