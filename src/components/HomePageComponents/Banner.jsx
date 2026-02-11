@@ -8,9 +8,20 @@ export default function Banner() {
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     return (
-        <section className="relative w-full aspect-video overflow-hidden bg-[#F3D7C1] max-w-[1920px] mx-auto">
+        <section className="relative w-full aspect-video overflow-hidden max-w-[1920px] mx-auto">
             {/* Background Media Layer */}
             <div className="absolute inset-0 z-0">
+                {/* Video - Plays once */}
+                <video
+                    autoPlay
+                    muted
+                    playsInline
+                    onLoadedData={() => setIsVideoLoaded(true)}
+                    className={`w-full h-full object-cover transition-opacity duration-1000`}
+                >
+                    <source src="/banner_video.mp4" type="video/mp4" />
+                </video>
+
                 {/* Fallback Image */}
                 {!isVideoLoaded && (
                     <img
@@ -19,18 +30,6 @@ export default function Banner() {
                         className="w-full h-full object-cover"
                     />
                 )}
-
-                {/* Video - Plays once */}
-                <video
-                    autoPlay
-                    muted
-                    playsInline
-                    onLoadedData={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'
-                        }`}
-                >
-                    <source src="/banner_video.mp4" type="video/mp4" />
-                </video>
 
             </div>
 
