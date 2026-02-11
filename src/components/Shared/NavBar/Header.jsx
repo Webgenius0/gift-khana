@@ -6,8 +6,9 @@ import { Search, ShoppingCart, Menu, X } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 import Link from 'next/link';
 import CommonContainer from '../CommonContainer/CommonContainer';
+import { cn } from '@/lib/utils';
 
-export default function Header() {
+export default function Header({ className }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navLinks = [
@@ -19,7 +20,7 @@ export default function Header() {
     ];
 
     return (
-        <header className='font-montserrat'>
+        <header className={cn('font-montserrat', className)}>
             <CommonContainer>
                 <div className="flex items-center justify-between gap-4">
                     {/* Logo Section */}

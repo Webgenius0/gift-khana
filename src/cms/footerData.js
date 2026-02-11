@@ -3,7 +3,7 @@ export const footerData = {
         { label: "My Account", href: "#" },
         { label: "Track my order", href: "#" },
         { label: "Return Policy", href: "#" },
-        { label: "About us", href: "#" }
+        { label: "About us", href: "/about-us" }
     ],
     contact: {
         phone: "+201225722929"
