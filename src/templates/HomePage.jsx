@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '@/components/Shared/NavBar/Header';
 import Banner from '@/components/HomePageComponents/Banner';
+import Footer from '@/components/Shared/Footer/Footer';
 
 const HomePage = () => {
     return (
@@ -10,6 +11,7 @@ const HomePage = () => {
                 <Header />
             </div>
             <Banner />
+            <Footer />
         </div>
     );
 };
