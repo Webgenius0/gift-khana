@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import CommonContainer from "../Shared/CommonContainer/CommonContainer";
 import { ctaSectionData } from "@/cms/ctaSectionData";
