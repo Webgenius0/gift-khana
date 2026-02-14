@@ -5,7 +5,7 @@ import CTAButton from "../CTA/CTAButton";
 
 export default function CTASection() {
     return (
-        <section className="py-20 max-w-[1920px] mx-auto">
+        <section className="py-10 max-w-[1920px] mx-auto">
             <CommonContainer>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {ctaSectionData.map((item, index) => (

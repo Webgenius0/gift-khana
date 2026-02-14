@@ -8,9 +8,9 @@ export default function Banner() {
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     return (
-        <section className="relative w-full aspect-video overflow-hidden max-w-[1920px] mx-auto">
+        <section className="relative w-full lg:aspect-video overflow-hidden max-w-[1920px] mx-auto">
             {/* Background Media Layer */}
-            <div className="absolute inset-0 z-0">
+            <div className="lg:absolute inset-0 z-0">
                 {/* Video - Plays once */}
                 <video
                     autoPlay
@@ -23,29 +23,29 @@ export default function Banner() {
                 </video>
 
                 {/* Fallback Image */}
-                <img
+                {/* <img
                     src="/banner_image.png"
                     alt="Banner Background"
-                    className="w-full h-full object-cover"
-                />
+                    className=" w-full h-full object-cover"
+                /> */}
 
             </div>
 
             {/* Content Layer */}
             <CommonContainer className="relative z-10 h-full w-full ">
-                <div className="h-full flex flex-col justify-start pt-16 md:pt-24 lg:pt-46 max-w-2xl">
+                <div className="h-full mx-auto lg:mx-0 flex flex-col justify-start lg:pt-46 max-w-2xl">
                     {/* Title */}
-                    <h1 className="text-5xl text-secondary leading-tight font-bebas">
+                    <h1 className="text-center lg:text-left text-3xl lg:text-5xl text-secondary leading-tight font-bebas">
                         {bannerData.title}
                     </h1>
 
                     {/* Description */}
-                    <p className="text-sm md:text-lg font-medium text-secondary/90 max-w-lg leading-relaxed">
+                    <p className="text-center mx-auto lg:mx-0 lg:text-left text-xs md:text-lg font-medium text-secondary/90 max-w-lg leading-relaxed">
                         {bannerData.description}
                     </p>
 
                     {/* CTA Button from Figma */}
-                    <div className="mt-10">
+                    <div className="mt-10 hidden lg:block">
                         <Button className="px-8 py-6 text-lg shadow-lg">
                             SHOP NOW
                         </Button>

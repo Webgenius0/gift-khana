@@ -6,11 +6,11 @@ export default function ProductCard({ product, index }) {
     return (
         <div className="group cursor-pointer">
             {/* Product Image Container */}
-            <div className="relative aspect-square rounded-[30px] overflow-hidden mb-4 
-                shadow-[0_8px_30px_rgb(0,0,0,0.04)] /* Default subtle shadow */
-                border border-black/5 /* Subtle border to define the shape */
+            <div className="relative aspect-square rounded-lg lg:rounded-2xl overflow-hidden mb-4 
+                shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
+                border border-black/5 
                 transition-all duration-500 ease-out 
-                group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] /* Hover shadow */
+                group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] 
                 group-hover:-translate-y-2">
 
                 <Image
