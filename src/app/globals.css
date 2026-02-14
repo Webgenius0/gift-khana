@@ -144,3 +144,31 @@
 .smooth {
   transition: all 0.3s ease-in-out;
 }
+
+
+/* Width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle (thumb) — SQUARE */
+::-webkit-scrollbar-thumb {
+  background: var(--custom-secondary);
+  border-radius: 0;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+.scroll-container {
+  padding-right: 6px;
+}
