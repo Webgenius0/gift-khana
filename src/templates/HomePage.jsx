@@ -9,8 +9,8 @@ const HomePage = () => {
     return (
         <div className="min-h-screen bg-bg-primary">
             {/* --- Header --- */}
-            <div className="absolute top-0 z-100 w-full">
-                <Header />
+            <div className="md:absolute top-0 z-100 w-full">
+                <Header className='bg-[#DCC0AB]' />
             </div>
             <div className='-mb-1'>
                 <Banner />
