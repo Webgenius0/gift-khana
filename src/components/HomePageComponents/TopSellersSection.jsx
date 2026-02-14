@@ -9,7 +9,7 @@ import ProductCard from "../Products/ProductCard/ProductCard";
 
 export default function TopSellersSection() {
     return (
-        <section className="py-16 max-w-[1920px] mx-auto overflow-hidden">
+        <section className="py-10 max-w-[1920px] mx-auto overflow-hidden">
             <CommonContainer>
                 {/* Section Title */}
                 <h2 className="text-3xl md:text-4xl font-bold text-[#182235] text-center mb-12 font-montserrat">
