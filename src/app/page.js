@@ -1,11 +1,4 @@
-'use client'
+import HomePage from "@/templates/HomePage";
 
-
-
-export default function Home() {
-  return (
-    <div>
-      Hello World
-    </div>
-  );
-}
+const Home = () => <HomePage />
+export default Home
