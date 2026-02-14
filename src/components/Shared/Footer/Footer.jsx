@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
     return (
-        <footer className="bg-secondary text-white pt-16 pb-8 font-montserrat max-w-[1920px] mx-auto">
+        <footer className="bg-secondary w-full text-white pt-16 pb-8 font-montserrat max-w-[1920px] mx-auto">
             <CommonContainer>
                 {/* Upper Section: Links, Phone, and Get Help */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
