@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import CommonContainer from "../Shared/CommonContainer/CommonContainer";
-import { Heart, ChevronRight } from "lucide-react";
 import { topSellersData } from "@/cms/topSellersData";
-import Link from "next/link";
 import ProductCard from "../Products/ProductCard/ProductCard";
 
 export default function TopSellersSection() {
