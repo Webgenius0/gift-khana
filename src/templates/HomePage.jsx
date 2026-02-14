@@ -12,8 +12,10 @@ const HomePage = () => {
             <div className="absolute top-0 z-100 w-full">
                 <Header />
             </div>
-            <Banner />
-            <div className='bg-gradient-to-b from-[#DAC1A9] to-[#FBF3EA] max-w-[1920px] mx-auto'>
+            <div className='-mb-1'>
+                <Banner />
+            </div>
+            <div className='bg-linear-to-b from-[#DAC1A9] to-[#FBF3EA] max-w-[1920px] mx-auto relative z-1'>
                 <CTASection />
                 <TopSellersSection />
             </div>

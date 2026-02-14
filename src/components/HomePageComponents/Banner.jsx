@@ -23,13 +23,11 @@ export default function Banner() {
                 </video>
 
                 {/* Fallback Image */}
-                {!isVideoLoaded && (
-                    <img
-                        src="/banner_image.png"
-                        alt="Banner Background"
-                        className="w-full h-full object-cover"
-                    />
-                )}
+                <img
+                    src="/banner_image.png"
+                    alt="Banner Background"
+                    className="w-full h-full object-cover"
+                />
 
             </div>
 
