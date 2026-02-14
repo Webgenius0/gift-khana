@@ -1,9 +1,13 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default function CTAButton({ item, index }) {
+export default function CTAButton({ item, index, className }) {
     return (
         <div
-            className="bg-[#F3E8E0] rounded-[36px] md:rounded-[60px] p-3 md:p-6 lg:p-8 flex flex-col items-center group cursor-pointer hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative"
+            className={cn(
+                " bg-[#F3E8E0] rounded-[36px] md:rounded-[60px] p-3 md:p-6 lg:p-8 flex flex-col items-center group cursor-pointer hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative",
+                className
+            )}
         >
             {/* Image Container Area */}
             {/* Adjusted aspect ratio: 16/9 for mobile, 5/2 for large screens */}

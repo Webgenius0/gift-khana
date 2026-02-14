@@ -7,9 +7,17 @@ export default function CTASection() {
     return (
         <section className="py-20 max-w-[1920px] mx-auto">
             <CommonContainer>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {ctaSectionData.map((item, index) => (
-                        <CTAButton key={index} item={item} index={index} />
+                        <div
+                            key={index}
+                            className="w-full flex even:justify-end" >
+                            <CTAButton
+                                item={item}
+                                index={index}
+                                className="w-full md:w-[70%] lg:w-full"
+                            />
+                        </div>
                     ))}
                 </div>
             </CommonContainer>

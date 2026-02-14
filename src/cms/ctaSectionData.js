@@ -21,7 +21,7 @@ export const ctaSectionData = [
         title: "Home decor",
         buttonImage: button2,
         element: element2,
-        classNameElement: "absolute top-0 right-20 md:right-15 lg:right-30 w-[25%] group-hover:w-[30%] group-hover:right-18 group-hover:md:right-13 group-hover:lg:right-25 group-hover:-top-3 group-hover:md:-top-5 group-hover:lg:-top-7 smooth",
+        classNameElement: "absolute top-0 right-20 md:right-[15%] lg:right-30 w-[25%] group-hover:w-[30%] group-hover:right-18 group-hover:md:right-13 group-hover:lg:right-25 group-hover:-top-3 group-hover:md:-top-5 group-hover:lg:-top-7 smooth",
         // classNameElement: "absolute -top-30 right-6 scale-37 group-hover:scale-45 group-hover:-top-35 smooth",
     },
     {
