@@ -10,11 +10,11 @@ import MobileSheet from './MobileSheet';
 
 export default function Header({ className }) {
     const navLinks = [
-        "Create your own",
-        "Ready-made gifts",
-        "Home decoration",
-        "Gadgets and accessories",
-        "Explore all items"
+        { label: "Create your own", href: "/personalized-products" },
+        { label: "Ready-made gifts", href: "/ready-made-gifts" },
+        { label: "Home decoration", href: "/home-decoration" },
+        { label: "Gadgets and accessories", href: "/gadgets" },
+        { label: "Explore all items", href: "/all-items" }
     ];
 
 
@@ -58,9 +58,9 @@ export default function Header({ className }) {
                 {/* Desktop Navigation - Hidden on Mobile */}
                 <nav className="hidden md:flex mt-6 justify-center gap-4 lg:gap-8 text-[11px] lg:text-[13px] opacity-80 uppercase tracking-wide">
                     {navLinks.map((item) => (
-                        <Link key={item} href="/">
-                            <Button variant="link" className="text-text-secondary h-auto p-0">
-                                {item}
+                        <Link key={item.label} href={item.href}>
+                            <Button variant="link" className="text-text-secondary h-auto p-0 hover:no-underline transition-opacity hover:opacity-100">
+                                {item.label}
                             </Button>
                         </Link>
                     ))}

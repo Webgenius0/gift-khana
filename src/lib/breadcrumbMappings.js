@@ -11,5 +11,6 @@ export const breadcrumbMappings = {
     'suppliers': 'Suppliers',
     'purchase-orders': 'Purchase Orders',
     'settings': 'Settings',
-    'about-us': 'About us'
+    'about-us': 'About us',
+    'personalized-products': 'Design your own'
 };
