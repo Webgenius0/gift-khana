@@ -1,20 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Header from "@/components/Shared/NavBar/Header";
-import Footer from "@/components/Shared/Footer/Footer";
 import CommonContainer from "@/components/Shared/CommonContainer/CommonContainer";
 import { aboutUsData } from "@/cms/aboutUsData";
+import DynamicBreadcrumb from "@/components/Shared/DynamicBreadcrumb/DynamicBreadcrumb";
 
 export default function AboutUsPage() {
     return (
         <CommonContainer className="pt-8">
-            {/* Breadcrumbs */}
-            <div className="text-sm font-montserrat text-secondary/60 mb-6 uppercase tracking-wider">
-                <span>HOME</span>
-                <span className="mx-2">&gt;</span>
-                <span className="text-secondary font-bold">About us</span>
-            </div>
+            <DynamicBreadcrumb />
 
             {/* Page Title */}
             <h1 className="text-4xl md:text-5xl font-light text-secondary font-montserrat mb-8">
@@ -22,7 +16,7 @@ export default function AboutUsPage() {
             </h1>
 
             {/* Banner Image */}
-            <div className="relative w-full aspect-[21/9] rounded-tr-[40px] rounded-bl-[40px] overflow-hidden mb-16">
+            <div className="relative w-full aspect-21/9 rounded-tr-[40px] rounded-bl-[40px] overflow-hidden mb-16">
                 <Image
                     src={aboutUsData.bannerImage}
                     alt="About Us Banner"
