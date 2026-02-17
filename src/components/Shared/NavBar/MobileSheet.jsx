@@ -4,20 +4,13 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet";
+import mobileMenuLinks from "@/data/mobileMenuLinks";
 
-import { Menu, User, Package, Palette, Heart, LogOut } from 'lucide-react';
+import { Menu, User, LogOut } from 'lucide-react';
 import Link from 'next/link';
 
 
 export default function MobileSheet() {
-    const mobileMenuLinks = [
-        { icon: User, label: "My Account", href: "/account" },
-        { icon: Package, label: "My Orders", href: "/orders" },
-        { icon: Palette, label: "Saved Designs", href: "/saved-designs" },
-        { icon: Heart, label: "Likes", href: "/likes" },
-    ];
-
-
     return (
         <Sheet>
             <SheetTrigger asChild>
