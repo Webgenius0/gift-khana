@@ -7,7 +7,7 @@ import TopSellersSection from '@/components/HomePageComponents/TopSellersSection
 
 const HomePage = () => {
     return (
-        <div className="min-h-screen bg-bg-primary">
+        <div className="min-h-screen bg-[#DAC1A9] flex flex-col">
             {/* --- Header --- */}
             <div className="lg:absolute top-0 z-100 w-full">
                 <Header className='bg-[#DCC0AB] lg:bg-transparent' />
@@ -15,11 +15,11 @@ const HomePage = () => {
             <div className='-mb-1'>
                 <Banner />
             </div>
-            <div className='bg-linear-to-b from-[#DAC1A9] to-[#FBF3EA] max-w-[1920px] mx-auto relative z-1'>
+            <div className='flex-1 w-full bg-linear-to-b from-[#DAC1A9] to-[#FBF3EA]  mx-auto relative z-1'>
                 <CTASection />
                 <TopSellersSection />
             </div>
-            <Footer className="max-w-[1920px] mx-auto" />
+            <Footer className="mx-auto" />
         </div>
     );
 };
