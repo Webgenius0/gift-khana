@@ -9,8 +9,7 @@ import CommonContainer from '../CommonContainer/CommonContainer';
 import { cn } from '@/lib/utils';
 import Logo from '../logo/Logo';
 import HeaderSearch from './HeaderSearch';
-
-
+import MobileSheet from './MobileSheet';
 
 export default function Header({ className }) {
     const navLinks = [
@@ -22,12 +21,20 @@ export default function Header({ className }) {
     ];
 
 
+
     return (
         <header className={cn('font-montserrat', className)}>
             <CommonContainer className='pb-6 md:pb-0'>
                 <div className="flex items-center justify-between gap-4">
-                    {/* Logo */}
-                    <Logo />
+                    <div className="flex items-center gap-2">
+                        {/* Mobile Menu Trigger */}
+                        <div className="md:hidden">
+                            <MobileSheet />
+                        </div>
+
+                        {/* Logo */}
+                        <Logo />
+                    </div>
 
                     {/* Desktop Search Bar - Hidden on Mobile */}
                     <HeaderSearch className='max-w-xl hidden md:flex' />
@@ -38,7 +45,7 @@ export default function Header({ className }) {
                             <LanguageSelector />
                         </div>
 
-                        <Button>
+                        <Button className="hidden sm:inline-flex">
                             Sign in
                         </Button>
 
