@@ -1,33 +1,17 @@
 "use client";
-import { useState, useRef } from "react";
 import { bannerData } from "@/cms/bannerData";
 import { Button } from "@/components/ui/button";
 import CommonContainer from "../Shared/CommonContainer/CommonContainer";
+import BannerVideo from "../Shared/BannerVideo/BannerVideo";
 
 export default function Banner() {
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     return (
         <section className="relative w-full lg:aspect-video overflow-hidden max-w-[1920px] mx-auto">
             {/* Background Media Layer */}
             <div className="lg:absolute inset-0 z-0  -mb-2">
                 {/* Video - Plays once */}
-                <video
-                    autoPlay
-                    muted
-                    playsInline
-                    onLoadedData={() => setIsVideoLoaded(true)}
-                    className={`w-full h-full object-cover transition-opacity duration-1000`}
-                >
-                    <source src="/banner_video.mp4" type="video/mp4" />
-                </video>
-
-                {/* Fallback Image */}
-                {/* <img
-                    src="/banner_image.png"
-                    alt="Banner Background"
-                    className=" w-full h-full object-cover"
-                /> */}
+                <BannerVideo />
 
             </div>
             <div className="bg-bg-primary lg:bg-transparent w-full z-1 relative">
