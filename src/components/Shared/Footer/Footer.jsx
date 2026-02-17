@@ -25,12 +25,12 @@ export default function Footer() {
                     <div className="flex flex-col sm:flex-row items-center gap-10 lg:gap-14">
                         {/* Phone Number */}
                         <div className="flex items-center gap-4">
-                            <Phone className="w-8 h-8 rotate-[15deg] fill-white" />
+                            <Phone className="w-8 h-8 rotate-15 fill-white" />
                             <span className="text-xl font-bold tracking-tight">{footerData.contact.phone}</span>
                         </div>
 
                         {/* Get Help Button */}
-                        <Button className="bg-white text-secondary px-10! py-8 rounded-[40px] flex items-center gap-4 font-bold hover:bg-white/95 transition-all shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)] group">
+                        <Button className="text-secondary px-10! py-8 rounded-[40px] flex items-center gap-4 font-bold  transition-all shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)] group">
                             <MessagesSquare className="w-8 h-8" />
                             <span className="text-xl">{footerData.help.text}</span>
                         </Button>
