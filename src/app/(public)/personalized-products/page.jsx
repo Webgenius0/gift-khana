@@ -1,5 +1,6 @@
 
 import PersonalizedProductsPage from '@/templates/PersonalizedProductsPage';
+import { Suspense } from 'react';
 
 export const metadata = {
     title: 'Personalized Custom Gifts | Gift Khana',
@@ -7,5 +8,9 @@ export const metadata = {
 };
 
 export default function Page() {
-    return <PersonalizedProductsPage />;
+    return (
+        <Suspense>
+            <PersonalizedProductsPage />
+        </Suspense>
+    );
 }
