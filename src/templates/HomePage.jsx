@@ -19,7 +19,7 @@ const HomePage = () => {
                 <CTASection />
                 <TopSellersSection />
             </div>
-            <Footer />
+            <Footer className="max-w-[1920px] mx-auto" />
         </div>
     );
 };

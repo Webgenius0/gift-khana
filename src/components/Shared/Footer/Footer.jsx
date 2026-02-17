@@ -5,10 +5,11 @@ import { Phone, MessagesSquare } from "lucide-react";
 import Link from "next/link";
 import { footerData } from "@/cms/footerData";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
+export default function Footer({ className }) {
     return (
-        <footer className="bg-secondary w-full text-white pt-16 pb-8 font-montserrat max-w-[1920px] mx-auto">
+        <footer className={cn("bg-secondary w-full text-white pt-16 pb-8 font-montserrat", className)}>
             <CommonContainer>
                 {/* Upper Section: Links, Phone, and Get Help */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
