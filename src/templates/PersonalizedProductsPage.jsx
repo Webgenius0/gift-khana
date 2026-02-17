@@ -42,7 +42,7 @@ export default function PersonalizedProductsPage() {
                         <input
                             type="text"
                             placeholder="Search for products or designs"
-                            className="w-full bg-white rounded-full pl-6 pr-14 py-4 text-gray-500 placeholder-gray-400 outline-none shadow-sm border border-transparent transition-all focus:border-[#DAB79C]"
+                            className="w-full bg-white  pl-6 pr-14 py-4 text-gray-500 placeholder-gray-400 outline-none shadow-sm border border-transparent transition-all focus:border-[#DAB79C]"
                         />
                         <div className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400">
                             <Search size={24} />
@@ -61,7 +61,7 @@ export default function PersonalizedProductsPage() {
                 {/* Filters */}
                 <div className="flex flex-wrap items-center gap-4 mb-10 pb-4 border-b border-secondary/10">
                     <Select onValueChange={(v) => handleFilterChange("category", v)}>
-                        <SelectTrigger className="w-[180px] bg-transparent border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                        <SelectTrigger className="w-[180px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
                             <SelectValue placeholder="Refine by Category" />
                         </SelectTrigger>
                         <SelectContent>
@@ -73,7 +73,7 @@ export default function PersonalizedProductsPage() {
                     </Select>
 
                     <Select onValueChange={(v) => handleFilterChange("price", v)}>
-                        <SelectTrigger className="w-[100px] bg-transparent border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                        <SelectTrigger className="w-[100px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
                             <SelectValue placeholder="Price" />
                         </SelectTrigger>
                         <SelectContent>
@@ -85,7 +85,7 @@ export default function PersonalizedProductsPage() {
                     </Select>
 
                     <Select onValueChange={(v) => handleFilterChange("filter", v)}>
-                        <SelectTrigger className="w-[120px] bg-transparent border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                        <SelectTrigger className="w-[120px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
                             <SelectValue placeholder="Add Filter" />
                         </SelectTrigger>
                         <SelectContent>
