@@ -4,6 +4,7 @@ import CommonContainer from "@/components/Shared/CommonContainer/CommonContainer
 import ProductCard from "@/components/Products/ProductCard/ProductCard";
 import { personalizedProductsData } from "@/cms/personalizedProductsData";
 import DynamicBreadcrumb from "@/components/Shared/DynamicBreadcrumb/DynamicBreadcrumb";
+import Link from "next/link";
 import { Search } from "lucide-react";
 import {
     Select,
@@ -100,12 +101,17 @@ export default function PersonalizedProductsPage() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                     {personalizedProductsData.map((product, index) => (
-                        <ProductCard
+                        <Link
                             key={product.id}
-                            product={product}
-                            index={index}
-                            variant="personalized"
-                        />
+                            href={`/personalized-products/${product.name.toLowerCase().replace(/ /g, '-')}`}
+                            className="block"
+                        >
+                            <ProductCard
+                                product={product}
+                                index={index}
+                                variant="personalized"
+                            />
+                        </Link>
                     ))}
                 </div>
             </CommonContainer>
