@@ -10,7 +10,7 @@ export const singlePersonalizedItemData = {
     name: "Throw Pillow",
     price: "150 LE",
     unit: "per pillow",
-    deliveryInfo: "Order today with speed lee shipping and get it by Jan 6",
+    deliveryInfo: "Order today with expedited shipping and get it by Jan 6",
     description: "Decorate your home with custom pillows from Gift Khana and make yourself the envy of the neighborhood. Made from high quality Simplex Knit fabric, these 100% polyester pillows are soft and wrinkle-free. The heavyweight stretch material provides beautiful color definition for your design while also being the perfect complement to your couch!",
     dimensions: "16\" x 16\" (square)",
     features: [
