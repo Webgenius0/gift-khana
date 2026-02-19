@@ -2,7 +2,7 @@
 import React from "react";
 import CommonContainer from "@/components/Shared/CommonContainer/CommonContainer";
 import ProductCard from "@/components/Products/ProductCard/ProductCard";
-import { personalizedProductsData } from "@/cms/personalizedProductsData";
+import { homeDecorationData } from "@/cms/homeDecorationData";
 import DynamicBreadcrumb from "@/components/Shared/DynamicBreadcrumb/DynamicBreadcrumb";
 import { Search } from "lucide-react";
 import {
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function PersonalizedProductsPage() {
+export default function HomeDecorationPage() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -34,7 +34,7 @@ export default function PersonalizedProductsPage() {
                 {/* Page Header */}
                 <div className="flex flex-col items-center mb-12">
                     <h1 className="text-3xl md:text-5xl font-medium text-[#182235] font-montserrat mb-8 text-center">
-                        Personalized Custom Gifts
+                        Home Decor
                     </h1>
 
                     {/* In-page Search Bar */}
@@ -55,7 +55,7 @@ export default function PersonalizedProductsPage() {
                     <DynamicBreadcrumb />
 
                     <span className="text-sm font-medium text-secondary/60 uppercase tracking-wider">
-                        {personalizedProductsData.length} results
+                        {homeDecorationData.length} results
                     </span>
                 </div>
 
@@ -99,14 +99,21 @@ export default function PersonalizedProductsPage() {
 
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-                    {personalizedProductsData.map((product, index) => (
+                    {homeDecorationData.map((product, index) => (
                         <ProductCard
                             key={product.id}
                             product={product}
                             index={index}
-                            variant="personalized"
+                            variant="cart"
                         />
                     ))}
+                </div>
+
+                {/* View More Button */}
+                <div className="flex justify-center mt-16">
+                    <button className="bg-[#182235] text-white px-10 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all">
+                        View more
+                    </button>
                 </div>
             </CommonContainer>
         </div>
