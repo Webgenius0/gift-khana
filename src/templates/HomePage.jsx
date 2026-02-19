@@ -15,7 +15,7 @@ const HomePage = () => {
             <div className='-mb-1'>
                 <Banner />
             </div>
-            <div className='flex-1 w-full bg-linear-to-b from-[#DAC1A9] to-[#FBF3EA]  mx-auto relative z-1'>
+            <div className='flex-1 w-full bg-linear-to-b from-[#DBC0A6] to-[#FBF3EA]  mx-auto relative z-1'>
                 <CTASection />
                 <TopSellersSection />
             </div>

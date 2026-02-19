@@ -14,7 +14,7 @@ export default function Banner() {
                 <BannerVideo />
 
             </div>
-            <div className="bg-bg-primary lg:bg-transparent w-full z-1 relative">
+            <div className="bg-[#DBC0A6] lg:bg-transparent w-full z-1 relative">
                 {/* Content Layer */}
                 <CommonContainer className="relative z-10 h-full w-full">
                     <div className="h-full mx-auto lg:mx-0 flex flex-col justify-start lg:pt-46 max-w-2xl">
