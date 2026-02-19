@@ -105,6 +105,7 @@ export default function HomeDecorationPage() {
                             product={product}
                             index={index}
                             variant="cart"
+                            href={`/home-decoration/${product.name.toLowerCase().replace(/ /g, '-')}`}
                         />
                     ))}
                 </div>
