@@ -54,7 +54,7 @@ export default function ProductCard({ product, index, variant = "default" }) {
                 {/* Bottom Row: Explore Design & Cart (for cart variant) */}
                 <div className="flex items-center justify-between mt-1">
                     <Link
-                        href={product.link || "#"}
+                        href={`/personalized-products/${product.name.toLowerCase().replace(/ /g, '-')}`}
                         className="flex items-center gap-1 text-[#182235] font-bold text-xs md:text-sm"
                     >
                         <span className="opacity-60 font-medium">Explore design</span>

@@ -101,17 +101,12 @@ export default function PersonalizedProductsPage() {
                 {/* Product Grid */}
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                     {personalizedProductsData.map((product, index) => (
-                        <Link
+                        <ProductCard
                             key={product.id}
-                            href={`/personalized-products/${product.name.toLowerCase().replace(/ /g, '-')}`}
-                            className="block"
-                        >
-                            <ProductCard
-                                product={product}
-                                index={index}
-                                variant="personalized"
-                            />
-                        </Link>
+                            product={product}
+                            index={index}
+                            variant="personalized"
+                        />
                     ))}
                 </div>
             </CommonContainer>
