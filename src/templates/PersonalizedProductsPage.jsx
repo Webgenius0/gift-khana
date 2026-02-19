@@ -51,52 +51,50 @@ export default function PersonalizedProductsPage() {
                 </div>
 
                 {/* Breadcrumbs and Results Count */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 border-b">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 mb-4 border-b">
                     <DynamicBreadcrumb />
-                </div>
-
-                {/* Filters */}
-                <div className="flex flex-col md:flex-row items-end md:items-center justify-between mb-10 ">
-                    <div className="flex flex-wrap items-center md:gap-4 ">
-                        <Select onValueChange={(v) => handleFilterChange("category", v)}>
-                            <SelectTrigger className="w-[180px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
-                                <SelectValue placeholder="Refine by Category" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="all">All Categories</SelectItem>
-                                <SelectItem value="apparel">Apparel</SelectItem>
-                                <SelectItem value="home">Home Decor</SelectItem>
-                                <SelectItem value="accessories">Accessories</SelectItem>
-                            </SelectContent>
-                        </Select>
-
-                        <Select onValueChange={(v) => handleFilterChange("price", v)}>
-                            <SelectTrigger className="w-[100px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
-                                <SelectValue placeholder="Price" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="all">Any Price</SelectItem>
-                                <SelectItem value="0-100">0 - 100 LE</SelectItem>
-                                <SelectItem value="100-200">100 - 200 LE</SelectItem>
-                                <SelectItem value="200+">200+ LE</SelectItem>
-                            </SelectContent>
-                        </Select>
-
-                        <Select onValueChange={(v) => handleFilterChange("filter", v)}>
-                            <SelectTrigger className="w-[120px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
-                                <SelectValue placeholder="Add Filter" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="all">Clear Filters</SelectItem>
-                                <SelectItem value="newest">Newest</SelectItem>
-                                <SelectItem value="popular">Popular</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
 
                     <span className="text-sm font-medium text-secondary/60 uppercase tracking-wider">
                         {personalizedProductsData.length} results
                     </span>
+                </div>
+
+                {/* Filters */}
+                <div className="flex flex-wrap items-end md:items-center gap-4 mb-10">
+                    <Select onValueChange={(v) => handleFilterChange("category", v)}>
+                        <SelectTrigger className="w-[180px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                            <SelectValue placeholder="Refine by Category" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="all">All Categories</SelectItem>
+                            <SelectItem value="apparel">Apparel</SelectItem>
+                            <SelectItem value="home">Home Decor</SelectItem>
+                            <SelectItem value="accessories">Accessories</SelectItem>
+                        </SelectContent>
+                    </Select>
+
+                    <Select onValueChange={(v) => handleFilterChange("price", v)}>
+                        <SelectTrigger className="w-[100px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                            <SelectValue placeholder="Price" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="all">Any Price</SelectItem>
+                            <SelectItem value="0-100">0 - 100 LE</SelectItem>
+                            <SelectItem value="100-200">100 - 200 LE</SelectItem>
+                            <SelectItem value="200+">200+ LE</SelectItem>
+                        </SelectContent>
+                    </Select>
+
+                    <Select onValueChange={(v) => handleFilterChange("filter", v)}>
+                        <SelectTrigger className="w-[120px] bg-transparent! border-none shadow-none text-secondary font-bold uppercase tracking-wider text-xs p-0 h-auto focus:ring-0">
+                            <SelectValue placeholder="Add Filter" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="all">Clear Filters</SelectItem>
+                            <SelectItem value="newest">Newest</SelectItem>
+                            <SelectItem value="popular">Popular</SelectItem>
+                        </SelectContent>
+                    </Select>
                 </div>
 
                 {/* Product Grid */}

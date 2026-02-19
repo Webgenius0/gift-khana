@@ -35,7 +35,7 @@ const DynamicBreadcrumb = ({ customMappings = {}, currentName = "" }) => {
     };
 
     return (
-        <Breadcrumb className="text-sm font-montserrat text-secondary/60 mb-6 uppercase tracking-wider">
+        <Breadcrumb className="text-sm font-montserrat text-secondary/60 uppercase tracking-wider">
             <BreadcrumbList className="gap-0 text-inherit">
                 {/* Always show HOME first */}
                 <BreadcrumbItem className="text-inherit">
