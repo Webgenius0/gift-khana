@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
-export default function ProductCard({ product, index, variant = "default" }) {
+export default function ProductCard({ product, index, variant = "default", href = '' }) {
     const isPersonalized = variant === "personalized";
     const isCart = variant === "cart";
 
@@ -54,7 +54,7 @@ export default function ProductCard({ product, index, variant = "default" }) {
                 {/* Bottom Row: Explore Design & Cart (for cart variant) */}
                 <div className="flex items-center justify-between mt-1">
                     <Link
-                        href={`/personalized-products/${product.name.toLowerCase().replace(/ /g, '-')}`}
+                        href={href}
                         className="flex items-center gap-1 text-[#182235] font-bold text-xs md:text-sm"
                     >
                         <span className="opacity-60 font-medium">Explore design</span>
