@@ -42,9 +42,11 @@ export default function Header({ className }) {
                             <LanguageSelector />
                         </div>
 
-                        <Button className="hidden sm:inline-flex">
-                            Sign in
-                        </Button>
+                        <Link href="/signin">
+                            <Button className="hidden sm:inline-flex">
+                                Sign in
+                            </Button>
+                        </Link>
 
                         <Button className="rounded-full" size="icon">
                             <ShoppingCart size={24} strokeWidth={2.5} />
