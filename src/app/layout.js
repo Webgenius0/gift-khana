@@ -1,7 +1,7 @@
 import { Bebas_Neue, Courgette, Montserrat, Rubik } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-
+import LenisProvider from "@/providers/LenisProvider";
 
 const bebasNeue = Bebas_Neue({
   weight: "400",
@@ -29,12 +29,20 @@ export const metadata = {
   title: "Gift Khana",
   description: "Home for personalized gifts",
   icons: {
-    icon: '/fav-icon.svg',
-    apple: '/fav-icon.svg',
+    icon: [
+      {
+        url: '/fav-icon-navy.svg',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/fav-icon-white.svg',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: '/fav-icon-navy.svg',
   },
 };
 
-import LenisProvider from "@/providers/LenisProvider";
 
 export default function RootLayout({ children }) {
   return (
