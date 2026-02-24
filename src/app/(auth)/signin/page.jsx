@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import CommonInput from "@/components/Shared/CommonInput/CommonInput";
 
 export default function LoginPage() {
     return (
@@ -15,20 +16,12 @@ export default function LoginPage() {
                 </p>
 
                 <form className="space-y-6">
-                    <div className="space-y-1.5 focus-within:text-blue-600 transition-colors">
-                        <label htmlFor="email" className="text-[15px] font-medium text-custom-secondary/70">
-                            Email
-                        </label>
-                        <div className="relative">
-                            <input
-                                id="email"
-                                type="email"
-                                placeholder=""
-                                className="w-full h-[64px] px-5 bg-white border-[3px] border-custom-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all text-xl font-medium text-custom-secondary"
-                                required
-                            />
-                        </div>
-                    </div>
+                    <CommonInput
+                        label="Email"
+                        type="email"
+                        id="email"
+                        required
+                    />
 
                     <p className="text-[14px] text-custom-secondary/80 leading-[1.6]">
                         By clicking &quot;Continue,&quot; I agree to the{" "}
