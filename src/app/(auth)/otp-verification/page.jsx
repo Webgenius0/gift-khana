@@ -2,7 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import CommonInput from "@/components/Shared/CommonInput/CommonInput";
+import {
+    InputOTP,
+    InputOTPGroup,
+    InputOTPSlot,
+} from "@/components/ui/input-otp";
 import AuthHeader from "@/components/authComponents/AuthHeader";
 import AuthFormContainer from "@/components/authComponents/AuthFormContainer";
 import { useRouter } from "next/navigation";
@@ -24,17 +28,23 @@ export default function OTPVerificationPage() {
             />
 
             <AuthFormContainer onSubmit={handleSubmit}>
-                <CommonInput
-                    label="Verification Code"
-                    placeholder="0 0 0 0 0 0"
-                    type="text"
-                    id="otp"
-                    required
-                    maxLength={6}
-                    className="text-center tracking-widest text-3xl h-[80px]"
-                />
+                <div className="space-y-4 flex flex-col items-center">
+                    <label className="text-[17px] font-bold text-custom-secondary/80 w-full text-left">
+                        Verification Code
+                    </label>
+                    <InputOTP maxLength={6} containerClassName="group flex items-center gap-2 sm:gap-4">
+                        <InputOTPGroup className="gap-2 sm:gap-4">
+                            <InputOTPSlot index={0} />
+                            <InputOTPSlot index={1} />
+                            <InputOTPSlot index={2} />
+                            <InputOTPSlot index={3} />
+                            <InputOTPSlot index={4} />
+                            <InputOTPSlot index={5} />
+                        </InputOTPGroup>
+                    </InputOTP>
+                </div>
 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 mt-10">
                     <Button
                         type="submit"
                         className="w-full h-[64px] bg-custom-secondary text-white font-bold rounded-lg hover:bg-custom-secondary/90 transition-all text-[19px] py-0 hover:scale-[1.01] active:scale-[0.99]"
