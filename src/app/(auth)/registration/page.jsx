@@ -8,16 +8,32 @@ import AuthFormContainer from "@/components/authComponents/AuthFormContainer";
 import AuthAgreement from "@/components/authComponents/AuthAgreement";
 import GoogleLoginBtn from "@/components/socialLogin/GoogleLoginBtn";
 import AppleLoginBtn from "@/components/socialLogin/AppleLoginBtn";
+import { useRouter } from "next/navigation";
 
-export default function LoginPage() {
+export default function RegistrationPage() {
+    const router = useRouter();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // registration logic
+        router.push("/otp-verification");
+    };
+
     return (
         <>
             <AuthHeader
-                title="Sign in or create a Gift Khana account"
-                subtitle="Enter your email below to get started"
+                title="Create a Gift Khana account"
+                subtitle="Join us today for a personalized experience"
             />
 
-            <AuthFormContainer>
+            <AuthFormContainer onSubmit={handleSubmit}>
+                <CommonInput
+                    label="Full Name"
+                    placeholder="Enter your full name"
+                    type="text"
+                    id="name"
+                    required
+                />
                 <CommonInput
                     label="Email"
                     placeholder="Enter your email"
@@ -27,17 +43,11 @@ export default function LoginPage() {
                 />
                 <CommonInput
                     label="Password"
-                    placeholder="Enter your password"
+                    placeholder="Create a password"
                     type="password"
                     id="password"
                     required
                 />
-
-                <div className="flex justify-end">
-                    <Link href="/forgot-password" size="sm" className="text-sm font-medium text-custom-secondary hover:underline underline-offset-4">
-                        Forgot password?
-                    </Link>
-                </div>
 
                 <AuthAgreement />
 
@@ -45,7 +55,7 @@ export default function LoginPage() {
                     type="submit"
                     className="w-full h-[64px] bg-custom-secondary text-white font-bold rounded-lg hover:bg-custom-secondary/90 transition-all text-[19px] py-0 hover:scale-[1.01] active:scale-[0.99]"
                 >
-                    Continue
+                    Create Account
                 </Button>
             </AuthFormContainer>
 
@@ -56,9 +66,9 @@ export default function LoginPage() {
 
             <div className="mt-8 text-center">
                 <p className="text-[15px] text-custom-secondary/80">
-                    Don&apos;t have an account?{" "}
-                    <Link href="/registration" className="font-bold text-custom-secondary hover:underline underline-offset-4">
-                        Register
+                    Already have an account?{" "}
+                    <Link href="/signin" className="font-bold text-custom-secondary hover:underline underline-offset-4">
+                        Sign in
                     </Link>
                 </p>
             </div>
