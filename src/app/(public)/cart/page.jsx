@@ -195,10 +195,12 @@ export default function CartPage() {
                                 </div>
                             </div>
 
-                            <Button className="w-full bg-secondary text-primary hover:bg-secondary/90 font-black h-14 rounded-xl text-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3">
-                                <CreditCard size={20} />
-                                Proceed to Checkout
-                            </Button>
+                            <Link href="/checkout">
+                                <Button className="w-full bg-secondary text-primary hover:bg-secondary/90 font-black h-14 rounded-xl text-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3">
+                                    <CreditCard size={20} />
+                                    Proceed to Checkout
+                                </Button>
+                            </Link>
 
                             <p className="text-[10px] text-secondary/20 text-center mt-6 font-bold tracking-tight uppercase leading-relaxed">
                                 100% Satisfaction, Returns Guaranteed!
