@@ -11,10 +11,10 @@ import MobileSheet from './MobileSheet';
 export default function Header({ className }) {
     const navLinks = [
         { label: "Create your own", href: "/personalized-products" },
-        { label: "Ready-made gifts", href: "/ready-made-gifts" },
-        { label: "Home decoration", href: "/home-decoration" },
-        { label: "Gadgets and accessories", href: "/gadgets" },
-        { label: "Explore all items", href: "/all-items" }
+        { label: "Ready-made gifts", href: "/products/ready-made-gifts" },
+        { label: "Home decoration", href: "/products/home-decoration" },
+        { label: "Gadgets and accessories", href: "/products/gadgets" },
+        { label: "Explore all items", href: "/products" }
     ];
 
 
