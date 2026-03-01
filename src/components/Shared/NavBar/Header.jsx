@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import CartDropdown from './CartDropdown';
 import Link from 'next/link';
 import CommonContainer from '../CommonContainer/CommonContainer';
 import { cn } from '@/lib/utils';
@@ -48,9 +49,9 @@ export default function Header({ className }) {
                             </Button>
                         </Link>
 
-                        <Button className="rounded-full" size="icon">
-                            <ShoppingCart size={24} strokeWidth={2.5} />
-                        </Button>
+                        <div className="hidden lg:block">
+                            <CartDropdown />
+                        </div>
                     </div>
                 </div>
 
