@@ -17,10 +17,10 @@ const EditorDrawer = () => {
                     <Plus size={16} />
                 </div>
             </DrawerTrigger>
-            <DrawerContent>
+            <DrawerContent className='bg-white'>
                 <DrawerTitle></DrawerTitle>
                 <DrawerFooter>
-                    <EditorDrawerContainer  />
+                    <EditorDrawerContainer />
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>
