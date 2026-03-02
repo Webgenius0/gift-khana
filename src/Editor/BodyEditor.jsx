@@ -40,6 +40,9 @@ const BodyEditor = () => {
             height,
             backgroundColor: 'white',
             backgroundImage: null,
+            selectionColor: '#F0E3DC50',
+            selectionBorderColor: '#F0E3DC',
+            selectionLineWidth: 3
             // layout: 'blank',
         })
 
