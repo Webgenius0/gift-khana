@@ -74,13 +74,9 @@ export default function EditPage() {
     return (
         <div className="h-[calc(100vh-64px)] relative flex bg-[#F0EAE4] overflow-hidden font-montserrat">
 
+            {/* Desktop Side Options (Hidden on Mobile) */}
             <div className='hidden xl:block absolute left-10 top-1/2 -translate-y-1/2 z-10'>
                 <EditorOptions />
-            </div>
-
-
-            <div className='z-10 absolute bottom-4 right-4 xl:hidden flex items-center gap-2'>
-                <EditorDrawer />
             </div>
 
 
@@ -139,8 +135,13 @@ export default function EditPage() {
                 </div>
 
                 {/* Bottom Toolbar: Zoom & Controls */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 z-30">
-                    <div className="flex items-center bg-white rounded-full shadow-[0_10px_30px_rgb(0,0,0,0.12)] h-12 px-2 overflow-hidden">
+                <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2.5 md:gap-3 z-30 w-[95%] md:w-max justify-center">
+                    {/* Mobile Tool Trigger */}
+                    <div className="xl:hidden shrink-0">
+                        <EditorDrawer />
+                    </div>
+
+                    <div className="flex items-center bg-white rounded-full shadow-[0_10px_30px_rgb(0,0,0,0.12)] h-12 px-1 md:px-2 overflow-hidden">
                         <button className="p-2.5 hover:bg-[#F3E8E0] rounded-full text-[#182235] transition-colors" onClick={() => setZoom(Math.max(10, zoom - 10))}>
                             <Minus size={18} />
                         </button>
@@ -166,14 +167,16 @@ export default function EditPage() {
                         </button>
                     </div>
 
-                    {[Settings, HelpCircle, Share].map((Icon, i) => (
-                        <button
-                            key={i}
-                            className="w-12 h-12 bg-white rounded-full shadow-[0_10px_30px_rgb(0,0,0,0.12)] flex items-center justify-center text-[#182235] hover:bg-[#F3E8E0] transition-all hover:-translate-y-1"
-                        >
-                            <Icon size={20} />
-                        </button>
-                    ))}
+                    <div className="hidden sm:flex items-center gap-2 md:gap-3">
+                        {[Settings, HelpCircle, Share].map((Icon, i) => (
+                            <button
+                                key={i}
+                                className="w-12 h-12 bg-white rounded-full shadow-[0_10px_30px_rgb(0,0,0,0.12)] flex items-center justify-center text-[#182235] hover:bg-[#F3E8E0] transition-all hover:-translate-y-1 shrink-0"
+                            >
+                                <Icon size={20} />
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Chat Bubble Float */}

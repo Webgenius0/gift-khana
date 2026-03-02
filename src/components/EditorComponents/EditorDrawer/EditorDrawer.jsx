@@ -12,10 +12,10 @@ import EditorDrawerContainer from "./EditorDrawerContainer";
 const EditorDrawer = () => {
     return (
         <Drawer>
-            <DrawerTrigger >
-                <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9 cursor-pointer shadow-sm">
-                    <Plus size={16} />
-                </div>
+            <DrawerTrigger asChild>
+                <button className="w-12 h-12 bg-white rounded-full shadow-[0_10px_30px_rgb(0,0,0,0.12)] flex items-center justify-center text-[#182235] hover:bg-[#F3E8E0] transition-all hover:-translate-y-1 outline-none">
+                    <Plus size={20} />
+                </button>
             </DrawerTrigger>
             <DrawerContent className='bg-white max-h-[90vh]'>
                 <DrawerTitle className="hidden"></DrawerTitle>
