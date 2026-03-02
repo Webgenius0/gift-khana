@@ -8,6 +8,7 @@ import DynamicBreadcrumb from "@/components/Shared/DynamicBreadcrumb/DynamicBrea
 import Image from "next/image";
 import { ChevronDown, Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function SinglePersonalizeItemPage() {
     const [mainImage, setMainImage] = useState(singlePersonalizedItemData.images[0]);
@@ -96,14 +97,16 @@ export default function SinglePersonalizeItemPage() {
                                         <button onClick={() => setQuantity(quantity + 1)} className="hover:text-[#DAB79C]"><Plus size={16} /></button>
                                     </div>
 
-                                    <button className="flex-1 bg-[#182235] text-white h-12 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+                                    <button className="cursor-pointer flex-1 bg-[#182235] text-white h-12 rounded-lg font-bold hover:bg-opacity-90 transition-all">
                                         Add to Cart
                                     </button>
                                 </div>
 
-                                <button className="w-full bg-[#182235] text-white h-14 rounded-lg font-bold hover:bg-opacity-90 transition-all uppercase tracking-widest text-sm">
-                                    Add your design
-                                </button>
+                                <Link href={`/edit/${singlePersonalizedItemData.id}`}>
+                                    <button className="cursor-pointer w-full bg-[#182235] text-white h-14 rounded-lg font-bold hover:bg-opacity-90 transition-all uppercase tracking-widest text-sm">
+                                        Add your design
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Specs & Description */}

@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import CartDropdown from './CartDropdown';
 import Link from 'next/link';
 import CommonContainer from '../CommonContainer/CommonContainer';
 import { cn } from '@/lib/utils';
@@ -11,10 +12,10 @@ import MobileSheet from './MobileSheet';
 export default function Header({ className }) {
     const navLinks = [
         { label: "Create your own", href: "/personalized-products" },
-        { label: "Ready-made gifts", href: "/ready-made-gifts" },
-        { label: "Home decoration", href: "/home-decoration" },
-        { label: "Gadgets and accessories", href: "/gadgets" },
-        { label: "Explore all items", href: "/all-items" }
+        { label: "Ready-made gifts", href: "/products/ready-made-gifts" },
+        { label: "Home decoration", href: "/products/home-decoration" },
+        { label: "Gadgets and accessories", href: "/products/gadgets" },
+        { label: "Explore all items", href: "/products" }
     ];
 
 
@@ -42,13 +43,15 @@ export default function Header({ className }) {
                             <LanguageSelector />
                         </div>
 
-                        <Button className="hidden sm:inline-flex">
-                            Sign in
-                        </Button>
+                        <Link href="/signin">
+                            <Button className="hidden sm:inline-flex">
+                                Sign in
+                            </Button>
+                        </Link>
 
-                        <Button className="rounded-full" size="icon">
-                            <ShoppingCart size={24} strokeWidth={2.5} />
-                        </Button>
+                        <div className="hidden lg:block">
+                            <CartDropdown />
+                        </div>
                     </div>
                 </div>
 

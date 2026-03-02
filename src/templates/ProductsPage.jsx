@@ -12,11 +12,24 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 
-export default function HomeDecorationPage() {
+export default function ProductsPage() {
+    const { category } = useParams();
     const router = useRouter();
     const searchParams = useSearchParams();
+
+    const getTitle = () => {
+        if (!category) return "All Products";
+        return category
+            .replace(/-/g, ' ')
+            .replace(/_/g, ' ')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    };
+
+    const displayTitle = getTitle();
 
     const handleFilterChange = (key, value) => {
         const params = new URLSearchParams(searchParams.toString());
@@ -34,7 +47,7 @@ export default function HomeDecorationPage() {
                 {/* Page Header */}
                 <div className="flex flex-col items-center mb-12">
                     <h1 className="text-3xl md:text-5xl font-medium text-[#182235] font-montserrat mb-8 text-center">
-                        Home Decor
+                        {displayTitle}
                     </h1>
 
                     {/* In-page Search Bar */}
@@ -52,7 +65,7 @@ export default function HomeDecorationPage() {
 
                 {/* Breadcrumbs and Results Count */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-4 mb-4 border-b">
-                    <DynamicBreadcrumb />
+                    <DynamicBreadcrumb currentName={displayTitle} />
 
                     <span className="text-sm font-medium text-secondary/60 uppercase tracking-wider">
                         {homeDecorationData.length} results
@@ -105,7 +118,7 @@ export default function HomeDecorationPage() {
                             product={product}
                             index={index}
                             variant="cart"
-                            href={`/home-decoration/${product.name.toLowerCase().replace(/ /g, '-')}`}
+                            href={`/products/${category || 'all'}/${product.name.toLowerCase().replace(/ /g, '-')}`}
                         />
                     ))}
                 </div>
