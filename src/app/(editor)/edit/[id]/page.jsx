@@ -45,6 +45,7 @@ import {
 import BodyEditor from "@/Editor/BodyEditor";
 import EditorDrawer from "@/components/EditorComponents/EditorDrawer/EditorDrawer";
 import EditorOptions from "@/components/EditorComponents/EditorOptions";
+import TextOptionsHorizontal from "@/components/EditorComponents/TextOptions/TextOptionsHorizontal";
 
 export default function EditPage() {
     const [currentView, setCurrentView] = useState("Front");
@@ -103,7 +104,10 @@ export default function EditPage() {
                     </div>
                 </div> */}
 
-                <BodyEditor />
+                <div className="flex flex-col items-center justify-center gap-2">
+                    <TextOptionsHorizontal />
+                    <BodyEditor />
+                </div>
 
                 {/* Right Side: View Navigator */}
                 <div className="absolute top-8 right-8 flex flex-col gap-4 z-10">
