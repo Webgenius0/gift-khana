@@ -10,20 +10,15 @@ import {
     ChevronDown,
     ShieldCheck,
     CreditCard,
-    CheckCircle2
+    CheckCircle2,
+    Plus,
+    Minus
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { topSellersData } from "@/cms/topSellersData";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue
-} from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
 export default function CartPage() {
@@ -67,8 +62,8 @@ export default function CartPage() {
                     <h1 className="text-3xl font-bold text-secondary">
                         Your Shopping Cart <span className="text-secondary/40 font-medium">({totalQty} items)</span>
                     </h1>
-                    <p className="text-sm font-medium text-secondary/60">
-                        Not logged in? <Link href="/signin" className="text-primary hover:underline underline-offset-4">Sign in</Link>
+                    <p className="text-sm font-medium text-secondary/80">
+                        Not logged in? <Link href="/signin" className="text-secondary font-bold hover:underline underline-offset-4 tracking-tight">Sign in</Link>
                     </p>
                 </div>
 
@@ -115,7 +110,7 @@ export default function CartPage() {
                                             <span className="text-xl font-black text-secondary">
                                                 ${(item.salePrice * item.qty).toFixed(2)}
                                             </span>
-                                            <span className="text-xs font-black text-primary mt-1">
+                                            <span className="text-xs font-black text-secondary mt-1">
                                                 You saved ${((item.originalPrice - item.salePrice) * item.qty).toFixed(2)}
                                             </span>
                                         </div>
@@ -133,23 +128,23 @@ export default function CartPage() {
                                     </div>
 
                                     <div className="mt-auto flex flex-wrap items-center gap-8 border-t border-secondary/5 pt-6">
-                                        <div className="flex flex-col gap-1.5">
+                                        <div className="flex items-center gap-2">
                                             <Label className="text-[10px] font-black uppercase tracking-widest text-secondary/30">qty</Label>
-                                            <Select
-                                                defaultValue={item.qty.toString()}
-                                                onValueChange={(val) => updateQty(item.id, val)}
-                                            >
-                                                <SelectTrigger className="w-20 bg-bg-secondary border-none rounded-lg font-bold text-secondary shadow-sm">
-                                                    <SelectValue />
-                                                </SelectTrigger>
-                                                <SelectContent className="rounded-xl p-2 bg-white border-secondary/5">
-                                                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
-                                                        <SelectItem key={n} value={n.toString()} className="rounded-lg font-bold">
-                                                            {n}
-                                                        </SelectItem>
-                                                    ))}
-                                                </SelectContent>
-                                            </Select>
+                                            <div className="flex items-center justify-between border border-secondary/10 rounded-lg bg-bg-secondary w-28 h-10 px-3 shrink-0">
+                                                <button
+                                                    onClick={() => updateQty(item.id, Math.max(1, item.qty - 1))}
+                                                    className="text-secondary/40 hover:text-secondary transition-colors"
+                                                >
+                                                    <Minus size={14} />
+                                                </button>
+                                                <span className="font-bold text-sm text-secondary">{item.qty}</span>
+                                                <button
+                                                    onClick={() => updateQty(item.id, item.qty + 1)}
+                                                    className="text-secondary/40 hover:text-secondary transition-colors"
+                                                >
+                                                    <Plus size={14} />
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <div className="flex items-center gap-6 text-sm font-bold text-secondary/40">
@@ -185,7 +180,7 @@ export default function CartPage() {
                                         <span className="text-xl font-black">${subtotal.toFixed(2)}</span>
                                     </div>
                                 </div>
-                                <div className="flex justify-between items-center text-xs font-black text-primary">
+                                <div className="flex justify-between items-center text-xs font-black text-secondary">
                                     <span>Savings</span>
                                     <span>-${totalSavings.toFixed(2)}</span>
                                 </div>
@@ -196,7 +191,7 @@ export default function CartPage() {
                             </div>
 
                             <Link href="/checkout">
-                                <Button className="w-full bg-secondary text-primary hover:bg-secondary/90 font-black h-14 rounded-xl text-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3">
+                                <Button className="w-full bg-secondary text-secondary hover:bg-secondary/90 font-black h-14 rounded-xl text-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-3">
                                     <CreditCard size={20} />
                                     Proceed to Checkout
                                 </Button>
