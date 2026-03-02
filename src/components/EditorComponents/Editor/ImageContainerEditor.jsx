@@ -71,7 +71,9 @@ const ImageContainerEditor = () => {
     };
 
     return (
-        <div>
+        <div className='font-montserrat'>
+            <p className='text-xl font-semibold'>Add Image to your design</p>
+            <p className='text-sm font-medium mt-2 mb-4'>Click the button below to add image to your design</p>
             <Button className="w-full mb-4 bg-secondary text-white!" onClick={handleUploadClick}>
                 Upload Files
             </Button>
