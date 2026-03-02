@@ -42,6 +42,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import BodyEditor from "@/Editor/BodyEditor";
 
 export default function EditPage() {
     const [currentView, setCurrentView] = useState("Front");
@@ -207,13 +208,13 @@ export default function EditPage() {
             {/* 3. Main Editor Area */}
             <div className="flex-1 bg-[#FBF3EA] relative flex items-center justify-center overflow-auto">
                 {/* Canvas Container */}
-                <div className="relative w-[600px] h-[600px] bg-white shadow-sm border border-[#F3E8E0] flex items-center justify-center transition-all duration-300">
-                    {/* Safe Area Dotted Border */}
+                {/* <div className="relative w-[600px] h-[600px] bg-white shadow-sm border border-[#F3E8E0] flex items-center justify-center transition-all duration-300">
+
                     <div className="absolute inset-4 border-2 border-dashed border-[#DAB79C]/30 pointer-events-none rounded-sm">
                         <div className="absolute inset-0 border-2 border-dashed border-[#182235]/5 rounded-sm" />
                     </div>
 
-                    {/* Product Template Background */}
+
                     <div className="w-full h-full relative opacity-[0.08] p-12 pointer-events-none">
                         <Image
                             src={singlePersonalizedItemData.images[0]}
@@ -222,7 +223,9 @@ export default function EditPage() {
                             className="object-contain"
                         />
                     </div>
-                </div>
+                </div> */}
+
+                <BodyEditor />
 
                 {/* Right Side: View Navigator */}
                 <div className="absolute top-8 right-8 flex flex-col gap-4 z-10">
@@ -292,11 +295,11 @@ export default function EditPage() {
                 </div>
 
                 {/* Chat Bubble Float */}
-                <div className="absolute bottom-10 right-10">
+                {/* <div className="absolute bottom-10 right-10">
                     <button className="w-16 h-16 bg-white shadow-[0_10px_30px_rgb(0,0,0,0.12)] rounded-full border border-gray-100 flex items-center justify-center text-[#182235] hover:scale-110 active:scale-95 transition-all">
                         <MessageCircle size={32} />
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
