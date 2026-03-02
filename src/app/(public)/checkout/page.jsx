@@ -96,7 +96,7 @@ export default function CheckoutPage() {
                         {/* Review Section */}
                         <div className="space-y-4">
                             <h2 className="text-[14px] font-bold uppercase tracking-wider opacity-80">REVIEW DETAILS BEFORE SUBMITTING</h2>
-                            <div className="bg-white rounded-lg border border-secondary/10 divide-y divide-secondary/5 overflow-hidden">
+                            <div className="bg-white border border-secondary/10 divide-y divide-secondary/5 overflow-hidden">
                                 {[
                                     { label: "Phone", value: "1225722929" },
                                     { label: "Email", value: "aghassan@gmail.com" },
@@ -116,7 +116,7 @@ export default function CheckoutPage() {
                         {/* Other Section */}
                         <div className="space-y-4">
                             <h2 className="text-[14px] font-bold uppercase tracking-wider opacity-80">OTHER</h2>
-                            <div className="bg-white rounded-lg border border-secondary/10 overflow-hidden">
+                            <div className="bg-white border border-secondary/10 overflow-hidden">
                                 <div className="p-4 px-6 flex items-center justify-between">
                                     <div className="flex items-center gap-10 flex-1">
                                         <span className="text-[11px] font-bold opacity-30 w-16 uppercase tracking-tight">source</span>
@@ -125,10 +125,10 @@ export default function CheckoutPage() {
                                                 <SelectTrigger className="w-full border-none bg-transparent! h-auto p-0 shadow-none focus:ring-0 text-[13px] font-medium opacity-80 uppercase tracking-wide">
                                                     <SelectValue />
                                                 </SelectTrigger>
-                                                <SelectContent className="bg-white rounded-lg font-montserrat p-1 group border-none shadow-2xl">
-                                                    <SelectItem value="none" className="rounded-lg font-medium text-sm">None</SelectItem>
-                                                    <SelectItem value="social" className="rounded-lg font-medium text-sm">Social Media</SelectItem>
-                                                    <SelectItem value="friend" className="rounded-lg font-medium text-sm">Friend / Relative</SelectItem>
+                                                <SelectContent className="bg-white font-montserrat p-1 group border-none shadow-2xl">
+                                                    <SelectItem value="none" className=" font-medium text-sm">None</SelectItem>
+                                                    <SelectItem value="social" className="font-medium text-sm">Social Media</SelectItem>
+                                                    <SelectItem value="friend" className="font-medium text-sm">Friend / Relative</SelectItem>
                                                 </SelectContent>
                                             </Select>
                                         </div>
@@ -140,7 +140,7 @@ export default function CheckoutPage() {
                         {/* Coupon Section */}
                         <div className="space-y-4">
                             <h2 className="text-[14px] font-bold uppercase tracking-wider opacity-80">ADD COUPON CODE</h2>
-                            <div className="bg-white rounded-lg border border-secondary/10 overflow-hidden">
+                            <div className="bg-white border border-secondary/10 overflow-hidden">
                                 <div className="p-4 px-6 flex items-center justify-between">
                                     <div className="flex items-center gap-10 flex-1">
                                         <span className="text-[11px] font-bold opacity-30 w-16 uppercase tracking-tight">Code</span>
@@ -161,7 +161,7 @@ export default function CheckoutPage() {
                                 <p className="text-[11px] font-medium opacity-30">All transactions are secure and encrypted. Credit card information is never stored on our servers.</p>
                             </div>
 
-                            <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod} className="gap-0! border border-secondary/10 rounded-xl overflow-hidden">
+                            <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod} className="gap-0! border border-secondary/10 overflow-hidden">
                                 {[
                                     { id: "cod", label: "Cash on delivery" },
                                     { id: "instapay", label: "Instapay / transfer" },
