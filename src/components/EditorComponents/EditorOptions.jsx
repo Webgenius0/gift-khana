@@ -33,7 +33,7 @@ const EditorOptions = () => {
     return (
         <DropdownMenu disabled open={isDisabled ? false : open} modal={false}>
             <DropdownMenuTrigger asChild>
-                <div className={`${isDisabled ? 'cursor-not-allowed opacity-50 pointer-events-none' : ''} shadow-sm flex flex-col gap-3 bg-white text-center p-3 rounded-2xl max-h-max`}>
+                <div className={`${isDisabled ? 'cursor-not-allowed opacity-50 pointer-events-none' : ''} shadow-sm flex flex-col gap-1 bg-white text-center p-2 rounded-2xl max-h-max`}>
                     {editorOptionsData?.map((item) => {
                         const Icon = item.icon
                         return (
