@@ -235,12 +235,12 @@ export default function CheckoutPage() {
 
                     {/* Right Column: Order Summary Sidebar (Peach Match) */}
                     <div className="lg:col-span-5 relative">
-                        <div className="sticky top-10 bg-[#FFECE1] rounded-2xl p-8 space-y-10 border border-secondary/5">
+                        <div className="sticky top-10 bg-[#FFECE1] p-8 space-y-10 border border-secondary/5 h-full">
                             {/* Items */}
                             <div className="space-y-8">
                                 {cartItems.map((item) => (
                                     <div key={item.id} className="flex gap-4">
-                                        <div className="relative w-20 h-20 bg-white rounded-xl overflow-hidden shadow-sm shrink-0">
+                                        <div className="relative w-20 h-20 bg-white shadow-sm shrink-0">
                                             <Image src={item.image} alt={item.name} fill className="object-cover" />
                                             <span className="absolute -top-1 -right-1 bg-secondary text-white text-[9px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">{item.qty}</span>
                                         </div>
