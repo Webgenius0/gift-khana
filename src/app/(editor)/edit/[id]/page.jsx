@@ -79,7 +79,7 @@ export default function EditPage() {
             </div>
 
 
-            <div className='absolute bottom-4 right-4 xl:hidden flex items-center gap-2'>
+            <div className='z-10 absolute bottom-4 right-4 xl:hidden flex items-center gap-2'>
                 <EditorDrawer />
             </div>
 
@@ -110,31 +110,31 @@ export default function EditPage() {
                 </div>
 
                 {/* Right Side: View Navigator */}
-                <div className="absolute top-8 right-8 flex flex-col gap-4 z-10">
+                <div className="absolute top-4 right-4 md:top-8 md:right-8 flex xl:flex-col  gap-3 md:gap-4 z-20">
                     <div
                         onClick={() => setCurrentView("Front")}
                         className={cn(
-                            "cursor-pointer rounded-2xl overflow-hidden border-4 transition-all p-1 bg-[#F3E8E0] shadow-md",
+                            "cursor-pointer rounded-xl md:rounded-2xl overflow-hidden border-2 md:border-4 transition-all p-0.5 md:p-1 bg-[#F3E8E0] shadow-md",
                             currentView === "Front" ? "border-[#182235] scale-105" : "border-transparent opacity-60 hover:opacity-100"
                         )}
                     >
-                        <div className="relative w-28 h-28 bg-white rounded-xl overflow-hidden shadow-inner">
+                        <div className="relative w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-white rounded-lg md:rounded-xl overflow-hidden shadow-inner">
                             <Image src={singlePersonalizedItemData.images[0]} alt="Front" fill className="object-cover" />
                         </div>
-                        <div className="bg-white py-1.5 px-3 text-center text-[11px] font-bold text-[#182235] mt-1 rounded-lg uppercase tracking-wider">Front</div>
+                        <div className="bg-white py-1 md:py-1.5 px-2 md:px-3 text-center text-[8px] md:text-[11px] font-bold text-[#182235] mt-0.5 md:mt-1 rounded-md md:rounded-lg uppercase tracking-wider">Front</div>
                     </div>
 
                     <div
                         onClick={() => setCurrentView("Back")}
                         className={cn(
-                            "cursor-pointer rounded-2xl overflow-hidden border-4 transition-all p-1 bg-[#F3E8E0] shadow-md",
+                            "cursor-pointer rounded-xl md:rounded-2xl overflow-hidden border-2 md:border-4 transition-all p-0.5 md:p-1 bg-[#F3E8E0] shadow-md",
                             currentView === "Back" ? "border-[#182235] scale-105" : "border-transparent opacity-60 hover:opacity-100"
                         )}
                     >
-                        <div className="relative w-28 h-28 bg-white rounded-xl overflow-hidden shadow-inner font-bold flex items-center justify-center text-gray-400 italic">
+                        <div className="relative w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-white rounded-lg md:rounded-xl overflow-hidden shadow-inner font-bold flex items-center justify-center text-gray-400 italic">
                             <Image src={singlePersonalizedItemData.images[2]} alt="Back" fill className="object-cover" />
                         </div>
-                        <div className="bg-white py-1.5 px-3 text-center text-[11px] font-bold text-[#182235] mt-1 rounded-lg uppercase tracking-wider">Back</div>
+                        <div className="bg-white py-1 md:py-1.5 px-2 md:px-3 text-center text-[8px] md:text-[11px] font-bold text-[#182235] mt-0.5 md:mt-1 rounded-md md:rounded-lg uppercase tracking-wider">Back</div>
                     </div>
                 </div>
 

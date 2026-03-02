@@ -11,12 +11,12 @@ export default function EditLayout({ children }) {
             {/* Editor Top Header */}
             <header className="h-16 bg-white border-b border-[#F3E8E0] flex items-center justify-between px-4 sticky top-0 z-50">
                 {/* Left Section: Back and Name */}
-                <div className="flex items-center gap-6">
-                    <Link href="/personalized-products" className="flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-all text-[#182235]">
+                <div className="flex items-center gap-3 sm:gap-6">
+                    <Link href="/personalized-products" className="flex items-center gap-1 sm:gap-2 text-sm font-medium hover:opacity-70 transition-all text-[#182235]">
                         <ChevronLeft size={20} />
-                        Back
+                        <span className="hidden xs:inline sm:inline">Back</span>
                     </Link>
-                    <div className="flex items-center gap-3 border-l pl-6 h-6 border-[#182235]/10">
+                    <div className="hidden sm:flex items-center gap-3 border-l pl-6 h-6 border-[#182235]/10">
                         <span className="text-sm font-semibold text-[#182235]">Throw Pillow</span>
                         <div className="flex items-center gap-1.5 bg-[#E8F5E9] text-[#2E7D32] px-2 py-0.5 rounded-full text-[10px] font-bold">
                             <div className="w-1 h-1 bg-[#2E7D32] rounded-full" />
@@ -41,8 +41,8 @@ export default function EditLayout({ children }) {
                 </nav>
 
                 {/* Right Section: Actions */}
-                <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1 mr-2 border-r pr-4 border-[#182235]/10">
+                <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="hidden lg:flex items-center gap-1 mr-2 border-r pr-4 border-[#182235]/10">
                         <button className="p-2 text-[#182235]/60 hover:text-[#182235] transition-all bg-[#F3E8E0]/30 rounded-full">
                             <RotateCcw size={18} />
                         </button>
@@ -51,13 +51,14 @@ export default function EditLayout({ children }) {
                         </button>
                     </div>
 
-                    <button className="flex items-center gap-2 text-sm font-semibold text-[#182235] px-4 py-2 hover:bg-[#F3E8E0]/30 rounded-full transition-all">
+                    <button className="flex items-center gap-2 text-sm font-semibold text-[#182235] px-2 sm:px-4 py-2 hover:bg-[#F3E8E0]/30 rounded-full transition-all">
                         <Eye size={20} />
-                        Preview
+                        <span className="hidden md:inline">Preview</span>
                     </button>
 
-                    <Button className="bg-[#182235] hover:bg-[#1f2b45] text-white rounded-full px-6 font-bold text-sm h-10">
-                        Next: Design Back
+                    <Button className="bg-[#182235] hover:bg-[#1f2b45] text-white rounded-full px-4 sm:px-6 font-bold text-sm h-10">
+                        <span className="hidden sm:inline">Next: Design Back</span>
+                        <span className="sm:hidden">Next</span>
                     </Button>
                 </div>
             </header>
