@@ -43,6 +43,8 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import BodyEditor from "@/Editor/BodyEditor";
+import EditorDrawer from "@/components/EditorComponents/EditorDrawer/EditorDrawer";
+import EditorOptions from "@/components/EditorComponents/EditorOptions";
 
 export default function EditPage() {
     const [currentView, setCurrentView] = useState("Front");
@@ -71,139 +73,15 @@ export default function EditPage() {
     return (
         <div className="h-[calc(100vh-64px)] relative flex bg-[#F0EAE4] overflow-hidden font-montserrat">
 
-            <Tabs defaultValue="text" orientation="vertical" className="absolute top-1/2 -translate-y-1/2 left-4 h-fit flex flex-row items-center gap-4 z-40">
-                {/* 1. Floating Tool Sidebar */}
-                <TabsList className="w-[84px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border-none flex flex-col py-4 gap-1 h-auto rounded-[32px] p-2">
-                    {tools.map((tool) => (
-                        <TabsTrigger
-                            key={tool.id}
-                            value={tool.id}
-                            className={cn(
-                                "flex flex-col items-center justify-center py-4 px-0 gap-1 transition-all rounded-[24px] border-none data-[state=active]:bg-[#E0FAFF] data-[state=active]:text-[#182235] text-[#182235]/60 hover:text-[#182235] hover:bg-[#F3E8E0]/40 w-full shadow-none",
-                                "focus-visible:ring-0 focus-visible:outline-none"
-                            )}
-                        >
-                            <div className="mb-0.5">
-                                <tool.icon size={22} className={cn(tool.id === "text" && "stroke-[2.5px]")} />
-                            </div>
-                            <span className="text-[10px] font-bold text-center leading-tight whitespace-pre-line">
-                                {tool.label.replace(' ', '\n')}
-                            </span>
-                        </TabsTrigger>
-                    ))}
-                    {/* Less / Close Button at bottom */}
-                    <button className="mt-2 flex flex-col items-center justify-center py-4 text-[#182235]/60 hover:text-red-500 transition-all w-full">
-                        <div className="mb-0.5"><X size={22} /></div>
-                        <span className="text-[10px] font-bold">Less</span>
-                    </button>
-                </TabsList>
+            <div className='hidden xl:block absolute left-10 top-1/2 -translate-y-1/2 z-10'>
+                <EditorOptions />
+            </div>
 
-                {/* 2. Floating Content Panel */}
-                {tools.map((tool) => (
-                    <TabsContent key={tool.id} value={tool.id} className="w-[340px] bg-white shadow-[0_8px_40px_rgb(0,0,0,0.16)] rounded-[32px] flex flex-col h-[580px] mt-0">
-                        <div className="p-8 flex items-center justify-between">
-                            <h2 className="text-xl font-bold text-[#182235]">
-                                {tool.id === 'text' && "Add text to your design"}
-                                {tool.id === 'image' && "Add images to your design"}
-                                {tool.id === 'icons' && "Icons"}
-                                {tool.id === 'layers' && "Layers"}
-                                {tool.id === 'background' && "Background"}
-                                {tool.id === 'elements' && "Elements"}
-                            </h2>
-                            <button className="p-1 hover:bg-[#F3E8E0] rounded-full transition-all text-[#182235]/40">
-                                <X size={24} />
-                            </button>
-                        </div>
 
-                        <div className="px-8 flex-1 overflow-y-auto">
-                            {/* ADD TEXT PANEL */}
-                            {tool.id === "text" && (
-                                <div className="flex flex-col gap-8">
-                                    <p className="text-sm font-semibold text-[#182235]/60">
-                                        Click the button below to add text to your design
-                                    </p>
-                                    <button className="w-full bg-[#1A1A9E] text-white py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all shadow-lg border-2 border-[#1A1A9E]">
-                                        <Type size={20} strokeWidth={3} />
-                                        Add a text box
-                                    </button>
-                                </div>
-                            )}
+            <div className='absolute bottom-4 right-4 xl:hidden flex items-center gap-2'>
+                <EditorDrawer />
+            </div>
 
-                            {/* ADD IMAGE PANEL */}
-                            {tool.id === "image" && (
-                                <div className="flex flex-col gap-8">
-                                    <div className="space-y-2">
-                                        <p className="text-sm font-semibold text-[#182235]/60 leading-relaxed">
-                                            Add your images to personalize this design.
-                                            Already have an account? <span className="text-[#1A1A9E] cursor-pointer hover:underline font-bold">Sign In</span>
-                                        </p>
-                                    </div>
-                                    <div className="h-px bg-[#F3E8E0] w-full my-2" />
-                                    <div className="flex flex-col gap-4">
-                                        <button className="w-full bg-white text-[#1A1A9E] border-2 border-[#1A1A9E] py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-[#F3E8E0]/20 transition-all">
-                                            <Upload size={20} />
-                                            Upload from computer
-                                        </button>
-                                        <button className="w-full bg-white text-[#1A1A9E] border-2 border-[#1A1A9E] py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-[#F3E8E0]/20 transition-all">
-                                            <Smartphone size={20} />
-                                            Upload from your phone
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* ICONS PANEL */}
-                            {tool.id === "icons" && (
-                                <div className="flex flex-col gap-6">
-                                    <div className="relative">
-                                        <input
-                                            type="text"
-                                            placeholder="Search for icons"
-                                            className="w-full bg-white border-2 border-[#F3E8E0] rounded-full py-3.5 px-6 pr-14 outline-none focus:border-[#1A1A9E] transition-all text-sm font-medium"
-                                        />
-                                        <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1A1A9E] p-2.5 rounded-full text-white cursor-pointer hover:bg-opacity-90 transition-all">
-                                            <SearchIcon size={20} />
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-3 pb-8">
-                                        {iconCategories.map((cat) => (
-                                            <div
-                                                key={cat.name}
-                                                className={cn(
-                                                    "h-28 rounded-[20px] flex flex-col items-center justify-center gap-2 cursor-pointer transition-all hover:scale-105 active:scale-95",
-                                                    cat.color
-                                                )}
-                                            >
-                                                <cat.icon size={36} className="text-white opacity-90 stroke-[1.5px]" />
-                                                <span className="text-white font-bold text-xs uppercase tracking-widest">{cat.name}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* LAYERS PANEL */}
-                            {tool.id === "layers" && (
-                                <div className="flex flex-col gap-4">
-                                    <div className="bg-[#F8F9FA] p-4 rounded-2xl flex items-center gap-4 group cursor-move hover:bg-[#F1F3F5] transition-all relative">
-                                        <div className="w-1.5 h-full bg-[#CED4DA] rounded-full absolute left-3 top-0 bottom-0 py-8" />
-                                        <div className="ml-2 bg-[#F3E8E0] p-1.5 rounded-lg"><ImageIcon size={18} className="text-[#182235]/60" /></div>
-                                        <div className="w-16 h-10 relative bg-white rounded border border-[#000000]/10 overflow-hidden ml-auto">
-                                            <Image src={singlePersonalizedItemData.images[0]} alt="layer" fill className="object-cover" />
-                                        </div>
-                                    </div>
-                                    <div className="bg-[#F8F9FA] p-4 rounded-2xl flex items-center gap-4 group cursor-move hover:bg-[#F1F3F5] transition-all">
-                                        <div className="bg-[#F3E8E0] p-1.5 rounded-lg"><Square size={18} className="text-[#182235]/60" /></div>
-                                        <div className="w-16 h-10 border-2 border-dashed border-[#000000]/10 rounded ml-auto flex items-center justify-center text-[10px] text-[#000000]/20 font-bold italic">
-                                            Transparent
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </TabsContent>
-                ))}
-            </Tabs>
 
             {/* 3. Main Editor Area */}
             <div className="flex-1 bg-[#FBF3EA] relative flex items-center justify-center overflow-auto">
