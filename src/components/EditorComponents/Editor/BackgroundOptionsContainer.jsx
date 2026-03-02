@@ -82,7 +82,7 @@ const BackgroundOptionsContainer = () => {
     };
 
     return (
-        <div className='h-70 md:h-full overflow-y-auto'>
+        <div className='md:h-full overflow-y-auto' data-lenis-prevent>
             <div className="p-4 border-b flex justify-between items-center">
                 <h3 className="font-semibold text-sm text-gray-700">Background</h3>
                 <button

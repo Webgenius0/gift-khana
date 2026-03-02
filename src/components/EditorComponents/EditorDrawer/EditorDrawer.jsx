@@ -17,11 +17,11 @@ const EditorDrawer = () => {
                     <Plus size={16} />
                 </div>
             </DrawerTrigger>
-            <DrawerContent className='bg-white'>
-                <DrawerTitle></DrawerTitle>
-                <DrawerFooter>
+            <DrawerContent className='bg-white max-h-[90vh]'>
+                <DrawerTitle className="hidden"></DrawerTitle>
+                <div className="p-4 overflow-y-auto" data-lenis-prevent>
                     <EditorDrawerContainer />
-                </DrawerFooter>
+                </div>
             </DrawerContent>
         </Drawer>
     );

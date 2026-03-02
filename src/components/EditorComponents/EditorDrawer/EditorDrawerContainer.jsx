@@ -19,7 +19,7 @@ function EditorDrawerContainer() {
                                 value={item.key}
                                 className="flex flex-col gap-1 py-2 text-xs"
                             >
-                                <Icon/>
+                                <Icon />
                                 <span>{item.label}</span>
                             </TabsTrigger>
                         )
@@ -39,7 +39,7 @@ function EditorDrawerContainer() {
                     <BackgroundOptionsContainer />
                 </TabsContent>
 
-                <TabsContent value="sticker">
+                <TabsContent value="icons">
                     <StickersContainer />
                 </TabsContent>
 
