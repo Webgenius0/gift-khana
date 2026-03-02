@@ -110,7 +110,7 @@ export default function EditPage() {
                 </div>
 
                 {/* Right Side: View Navigator */}
-                <div className="absolute top-4 right-4 md:top-8 md:right-8 flex xl:flex-col  gap-3 md:gap-4 z-20">
+                <div className="absolute top-4 right-4 md:top-8 md:right-8 flex md:flex-col  gap-3 md:gap-4 z-20">
                     <div
                         onClick={() => setCurrentView("Front")}
                         className={cn(

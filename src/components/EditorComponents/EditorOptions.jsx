@@ -40,7 +40,7 @@ const EditorOptions = () => {
                             <button
                                 key={item.key}
                                 onClick={() => handleClick(item.key)}
-                                className={`cursor-pointer flex rounded-xl flex-col items-center justify-center p-2 gap-2 font-semibold
+                                className={`cursor-pointer flex rounded-xl flex-col items-center justify-center px-2 py-4 gap-2 font-semibold
                             ${activeTab === item.key ? 'bg-primary/50' : ''}`}
                             >
                                 <Icon className="scale-130" />

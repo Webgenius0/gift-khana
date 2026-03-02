@@ -31,7 +31,9 @@ const EditorTextInsert = ({ isMobile = false }) => {
 
 
     return (
-        <DropdownMenuContent side="left" align="start" className="p-4 w-80 bg-white">
+        <DropdownMenuContent side="left" align="start" className="font-montserrat p-4 w-80 bg-white">
+            <p className='text-xl font-semibold'>Add text to your design</p>
+            <p className='text-sm font-medium mt-2 mb-4'>Click the button below to add text to your design</p>
             <Button
                 onClick={() => handleAddText({ text: 'This is a text box', fontSize: 24, fontWeight: 'normal' })}
                 className='w-full hover:scale-100 active:scale-100 bg-secondary text-white!'
