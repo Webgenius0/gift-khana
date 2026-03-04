@@ -26,7 +26,7 @@ export default function CTAButton({ item, index, className, isActive }) {
                     <div className={cn(
                         "smooth",
                         item.classNameElement,
-                        isActive ? "opacity-100 scale-130" : ""
+                        isActive ? item.classNameElementActive : ""
                     )}>
                         <Image
                             src={item.element}
