@@ -23,15 +23,16 @@ export default function Header({ className }) {
     return (
         <header className={cn('font-montserrat', className)}>
             <CommonContainer className='pb-6 md:pb-0'>
-                <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between w-full">
+                        {/* Logo */}
+                        <Logo />
+
                         {/* Mobile Menu Trigger */}
                         <div className="md:hidden">
                             <MobileSheet />
                         </div>
 
-                        {/* Logo */}
-                        <Logo />
                     </div>
 
                     {/* Desktop Search Bar - Hidden on Mobile */}

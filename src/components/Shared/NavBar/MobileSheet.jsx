@@ -27,7 +27,7 @@ export default function MobileSheet() {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
+                <Button variant="ghost" size="icon" className='bg-primary' >
                     <Menu size={28} />
                 </Button>
             </SheetTrigger>
