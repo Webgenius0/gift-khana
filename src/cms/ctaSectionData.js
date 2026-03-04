@@ -15,7 +15,7 @@ export const ctaSectionData = [
         title: "Create you own",
         buttonImage: button1,
         element: element1,
-        classNameElement: "absolute top-1/2 -translate-y-1/2 scale-35 group-hover:scale-55 smooth max-w-max max-h-max ml-[7%]",
+        classNameElement: "absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 scale-70 group-hover:scale-130 smooth max-w-max max-h-max ml-[4%]",
     },
     {
         title: "Home decor",
