@@ -9,7 +9,7 @@ const HomePage = () => {
     return (
         <div className="min-h-screen bg-[#DAC1A9] flex flex-col">
             {/* --- Header --- */}
-            <div className="lg:absolute top-0 z-100 w-full">
+            <div className="lg:absolute top-0 z-10 w-full">
                 <Header className='bg-[#DCC0AB] lg:bg-transparent' />
             </div>
             <div className='-mb-1'>
