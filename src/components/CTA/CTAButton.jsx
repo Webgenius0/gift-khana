@@ -1,16 +1,15 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-export default function CTAButton({ item, index, className }) {
+export default function CTAButton({ item, index, className, isActive }) {
     return (
         <div
             className={cn(
-                "bg-[#F3E8E0] rounded-[38px] lg:rounded-[60px] p-3 md:p-4 flex flex-col items-center group cursor-pointer transition-all duration-500 transform hover:-translate-y-2 active:-translate-y-2 relative",
+                "bg-[#F3E8E0] rounded-[38px] lg:rounded-[60px] p-3 md:p-4 flex flex-col items-center group cursor-pointer transition-all duration-500 relative",
+                isActive ? "shadow-2xl -translate-y-2 scale-[1.02]" : "hover:shadow-2xl hover:-translate-y-2 lg:hover:scale-[1.02]",
                 className
             )}
         >
-            {/* Image Container Area */}
-            {/* Adjusted aspect ratio: 16/9 for mobile, 5/2 for large screens */}
             <div className="w-full aspect-5/2 relative flex items-center justify-center">
                 <div className="relative w-full h-full transition-transform duration-700 overflow-hidden rounded-[26px] lg:rounded-[44px]">
                     <Image
@@ -24,7 +23,11 @@ export default function CTAButton({ item, index, className }) {
                 </div>
 
                 {item?.element && (
-                    <div className={`${item?.classNameElement}`}>
+                    <div className={cn(
+                        "smooth",
+                        item.classNameElement,
+                        isActive ? "opacity-100 scale-130" : ""
+                    )}>
                         <Image
                             src={item.element}
                             alt={item.title}
@@ -38,9 +41,7 @@ export default function CTAButton({ item, index, className }) {
                 )}
             </div>
 
-            {/* Title */}
-            {/* Dynamic text sizing from mobile to desktop */}
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#182235] font-montserrat tracking-tight mt-2  text-center">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#182235] font-montserrat tracking-tight mt-2 text-center">
                 {item.title}
             </h3>
         </div>
