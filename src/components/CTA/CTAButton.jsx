@@ -5,7 +5,7 @@ export default function CTAButton({ item, index, className }) {
     return (
         <div
             className={cn(
-                " bg-[#F3E8E0] rounded-[38px] lg:rounded-[60px] p-3 md:p-4 flex flex-col items-center group cursor-pointer hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative",
+                "bg-[#F3E8E0] rounded-[38px] lg:rounded-[60px] p-3 md:p-4 flex flex-col items-center group cursor-pointer transition-all duration-500 transform hover:-translate-y-2 active:-translate-y-2 relative",
                 className
             )}
         >
