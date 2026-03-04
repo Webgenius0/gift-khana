@@ -24,7 +24,7 @@ export default function CTAButton({ item, index, className }) {
                 </div>
 
                 {item?.element && (
-                    <div className={`${item?.classNameElement} absolute`}>
+                    <div className={`${item?.classNameElement}`}>
                         <Image
                             src={item.element}
                             alt={item.title}
