@@ -28,10 +28,11 @@ export default function CTAButton({ item, index, className }) {
                         <Image
                             src={item.element}
                             alt={item.title}
-                            width={500} // Added explicit width/height for standard Img behavior
+                            width={500}
                             height={500}
                             className="object-contain w-full h-auto"
-                            priority={index < 2}
+                            priority={true}
+                            unoptimized={true}
                         />
                     </div>
                 )}
