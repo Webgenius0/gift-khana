@@ -24,19 +24,15 @@ export default function Header({ className }) {
         <header className={cn('font-montserrat', className)}>
             <CommonContainer className='pb-6 md:pb-0'>
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center justify-between w-full">
+                    <div className="flex items-center justify-between w-full md:w-auto">
                         {/* Logo */}
                         <Logo />
 
-                        {/* Mobile Menu Trigger */}
-                        <div className="md:hidden">
-                            <MobileSheet />
-                        </div>
 
                     </div>
 
                     {/* Desktop Search Bar - Hidden on Mobile */}
-                    <HeaderSearch className='max-w-xl hidden md:flex' />
+                    <HeaderSearch className='max-w-xl hidden xl:flex' />
 
                     {/* Actions */}
                     <div className="flex items-center gap-2 md:gap-6">
@@ -50,17 +46,23 @@ export default function Header({ className }) {
                             </Button>
                         </Link>
 
+
                         <div className="hidden lg:block">
                             <CartDropdown />
+                        </div>
+                        
+                        {/* Mobile Menu Trigger */}
+                        <div className="xl:hidden">
+                            <MobileSheet />
                         </div>
                     </div>
                 </div>
 
-                <HeaderSearch className='w-full md:hidden -bottom-4' />
+                <HeaderSearch className='w-full xl:hidden -bottom-4' />
 
 
                 {/* Desktop Navigation - Hidden on Mobile */}
-                <nav className="hidden md:flex mt-6 justify-center gap-4 lg:gap-8 text-[11px] lg:text-[13px] opacity-80 uppercase tracking-wide">
+                <nav className="hidden xl:flex mt-6 justify-center gap-4 lg:gap-8 text-[11px] lg:text-[13px] opacity-80 uppercase tracking-wide">
                     {navLinks.map((item) => (
                         <Link key={item.label} href={item.href}>
                             <Button variant="link" className="text-text-secondary h-auto p-0 hover:no-underline transition-opacity hover:opacity-100">
