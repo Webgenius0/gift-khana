@@ -15,13 +15,13 @@ export const ctaSectionData = [
         title: "Create you own",
         buttonImage: button1,
         element: element1,
-        classNameElement: "absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 scale-70 group-hover:scale-130 group-active:scale-130 smooth max-w-max max-h-max ml-[4%]",
+        classNameElement: "absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 scale-70 group-hover:scale-130 smooth max-w-max max-h-max ml-[4%]",
     },
     {
         title: "Home decor",
         buttonImage: button2,
         element: element2,
-        classNameElement: "absolute top-0 right-20 md:right-[15%] lg:right-30 w-[25%] group-hover:w-[30%] group-active:w-[30%] group-hover:right-18 group-active:right-18 group-hover:md:right-13 group-active:md:right-13 group-hover:lg:right-25 group-active:lg:right-25 group-hover:-top-3 group-active:-top-3 group-hover:md:-top-5 group-active:md:-top-5 group-hover:lg:-top-7 group-active:lg:-top-7 smooth",
+        classNameElement: "absolute top-0 right-20 md:right-[15%] lg:right-30 w-[25%] group-hover:w-[30%] group-hover:right-18 group-hover:md:right-13 group-hover:lg:right-25 group-hover:-top-3 group-hover:md:-top-5 group-hover:lg:-top-7 smooth",
     },
     {
         title: "Gadgets & Accessories",
