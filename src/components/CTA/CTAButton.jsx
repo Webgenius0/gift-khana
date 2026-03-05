@@ -1,9 +1,11 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTAButton({ item, index, className, isActive }) {
     return (
-        <div
+        <Link
+            href={item?.link}
             className={cn(
                 "bg-[#F3E8E0] rounded-[38px] lg:rounded-[60px] p-3 md:p-4 flex flex-col items-center group cursor-pointer transition-all duration-500 relative",
                 isActive ? "shadow-2xl -translate-y-2 scale-[1.02]" : "hover:shadow-2xl hover:-translate-y-2 lg:hover:scale-[1.02]",
@@ -44,6 +46,6 @@ export default function CTAButton({ item, index, className, isActive }) {
             <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#182235] font-montserrat tracking-tight mt-2 text-center">
                 {item.title}
             </h3>
-        </div>
+        </Link>
     );
 }
