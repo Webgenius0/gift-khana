@@ -17,7 +17,7 @@ export default function Banner() {
             <div className="bg-[#DBC0A6] lg:bg-transparent w-full z-1 relative">
                 {/* Content Layer */}
                 <CommonContainer className="relative z-10 h-full w-full">
-                    <div className="h-full mx-auto lg:mx-0 flex flex-col justify-start lg:pt-46 max-w-2xl">
+                    <div className="h-full mx-auto lg:mx-0 flex flex-col justify-start mb-4 lg:pt-46 max-w-2xl">
                         <div className="lg:bg-white/20 lg:backdrop-blur-sm lg:px-4 py-3 rounded-xl">
                             {/* Title */}
                             <h1 className="text-center lg:text-left text-3xl lg:text-5xl text-secondary leading-tight font-bebas">
