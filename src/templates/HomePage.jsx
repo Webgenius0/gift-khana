@@ -16,6 +16,13 @@ const HomePage = () => {
                 <Banner />
             </div>
             <div className='flex-1 w-full bg-linear-to-b from-[#DBC0A6] to-[#FBF3EA]  mx-auto relative z-1'>
+                {/* gradient effect  */}
+                <div className='relative'>
+                    <div
+                        className='absolute top-0 -translate-y-1/2 h-50 w-full 
+                    bg-[linear-gradient(to_bottom,transparent_0%,#dbc8b4_50%,transparent_100%)]'
+                    />
+                </div>
                 <CTASection />
                 <TopSellersSection />
             </div>
