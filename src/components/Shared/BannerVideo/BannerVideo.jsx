@@ -1,29 +1,4 @@
-import { useRef, useState } from 'react';
-
-const BannerVideo = () => {
-    const videoRef = useRef(null);
-    const playCountRef = useRef(0);
-    const [isPlaying, setIsPlaying] = useState(true);
-
-    const maxInitialPlays = 3;
-
-    const handlePlayClick = () => {
-        if (videoRef.current) {
-            playCountRef.current = maxInitialPlays;
-            videoRef.current.play();
-            setIsPlaying(true);
-        }
-    };
-
-    const handleVideoEnd = () => {
-        playCountRef.current += 1;
-        if (playCountRef.current < maxInitialPlays) {
-            videoRef.current.play();
-        } else {
-            setIsPlaying(false);
-        }
-    };
-
+const BannerVideo = ({ videoRef, handlePlayClick, handleVideoEnd, isPlaying }) => {
     return (
         <div className="relative w-full h-full overflow-hidden">
             <video

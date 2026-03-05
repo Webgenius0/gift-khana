@@ -3,15 +3,44 @@ import { bannerData } from "@/cms/bannerData";
 import { Button } from "@/components/ui/button";
 import CommonContainer from "../Shared/CommonContainer/CommonContainer";
 import BannerVideo from "../Shared/BannerVideo/BannerVideo";
+import { useRef, useState } from "react";
+import { Play } from "lucide-react";
 
 export default function Banner() {
+    const videoRef = useRef(null);
+    const playCountRef = useRef(0);
+    const [isPlaying, setIsPlaying] = useState(true);
+    const maxInitialPlays = 3;
+
+    const handlePlayClick = () => {
+        if (videoRef.current) {
+            playCountRef.current = maxInitialPlays;
+            videoRef.current.play();
+            setIsPlaying(true);
+        }
+    };
+
+    const handleVideoEnd = () => {
+        playCountRef.current += 1;
+        if (playCountRef.current < maxInitialPlays) {
+            videoRef.current.play();
+        } else {
+            setIsPlaying(false);
+        }
+    };
+
 
     return (
         <section className="relative w-full lg:aspect-video overflow-hidden max-w-[1920px] mx-auto">
             {/* Background Media Layer */}
             <div className="lg:absolute inset-0 z-0  -mb-2">
                 {/* Video - Plays once */}
-                <BannerVideo />
+                <BannerVideo
+                    videoRef={videoRef}
+                    handlePlayClick={handlePlayClick}
+                    handleVideoEnd={handleVideoEnd}
+                    isPlaying={isPlaying}
+                />
 
             </div>
             <div className="bg-[#DBC0A6] lg:bg-transparent w-full z-1 relative">
@@ -30,15 +59,40 @@ export default function Banner() {
                             </p>
 
                             {/* CTA Button from Figma */}
-                            <div className="mt-10 hidden lg:block">
+                            <div className="mt-10 hidden lg:block space-x-2">
                                 <Button className="px-8 py-6 text-lg shadow-lg">
                                     SHOP NOW
                                 </Button>
+
+
+                                {/* Play Button */}
+                                <Button
+                                    size="icon"
+                                    onClick={handlePlayClick}
+                                    className={`rounded-full p-6!
+                                            ${isPlaying
+                                            ? 'scale-0 opacity-0 pointer-events-none'
+                                            : 'scale-100 opacity-100 animate-pop'
+                                        }`}
+                                >
+                                    <Play fill />
+                                </Button>
+
+                                <style jsx>{`
+                                    @keyframes pop {
+                                        0% { transform: scale(0.5); opacity: 0; }
+                                        70% { transform: scale(1.1); opacity: 1; }
+                                        100% { transform: scale(1); opacity: 1; }
+                                    }
+                                    .animate-pop {
+                                        animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                    }
+                                `}</style>
                             </div>
                         </div>
                     </div>
                 </CommonContainer>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
